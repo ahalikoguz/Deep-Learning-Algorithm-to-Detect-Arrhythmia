@@ -29,7 +29,7 @@ except ValueError:
     print("File content is not in the expected format.")
 
 # Load the trained deep learning model
-model_path = "all_models/model_v.2.0.4/Model_6k_normal_1.pt"
+model_path = "model_file\model.pt"
 try:
     trained_DL_Model = torch.jit.load(model_path, map_location=device)
 except RuntimeError:
