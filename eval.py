@@ -29,21 +29,14 @@ except ValueError:
     print("File content is not in the expected format.")
 
 # Load the trained deep learning model
-model_path = "model_file\model.pt"
-try:
-    trained_DL_Model = torch.jit.load(model_path, map_location=device)
-except RuntimeError:
-    print("Error loading the model - check model path and format.")
-
-# Class labels
-class_labels = ['AFIB', 'Flutter', 'Sinus']
-
-# Load the trained model
-model_path = "model_file/Model.pt"
+model_path = "model_file/model.pt"
 try:
     trained_DL_Model = torch.jit.load(model_path, map_location=device)
 except Exception as e:
     print(f"Error loading the model: {e}")
+
+# Class labels
+class_labels = ['AFIB', 'Flutter', 'Sinus']
 
 # Evaluate the model
 if len(file_features) > 0:
